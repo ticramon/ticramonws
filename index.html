@@ -3,24 +3,30 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/ticramon.css">
     </head>
     <body>
-        <header>
+        <header id="encabezado">
             <img id="logo" src="./img/ticramon-mobile.png">
-            <h1>ticramon</h1>
+            <div id="nombreSitio">ticramon</div>
         </header>
-        <nav class="sidebar">
-            <ul>
-                <li><a class="active" href="#home">Inicio</a></li>
-                <li><a href="#acercade">Acerca de</a></li>
-                <li><a href="#noticias">Blog</a></li>
-                <li><a href="#news">Servicios</a></li>
-                <li><a href="#about">Contacto</a></li>
-            </ul>
-          </nav>
-        <nav>
-        <main>
+        
+        <!-- Top Navigation Menu -->
+        <nav class="topnav">
+        <a href="#home" class="active">Logo</a>
+        <div id="myLinks">
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+        </a>
+        </nav>
+        <script src="js/menu.js"></script>    
+        
+        <main id="inicio">
             <button class="acordeon">Acerca de</button>
             <section class="panel">
                 <p>
@@ -78,6 +84,7 @@
                 Antepenultima noticia
             </blockquote>
         </aside>
+        
         <footer>
             2024
         </footer>

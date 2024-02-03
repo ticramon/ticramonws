@@ -5,7 +5,7 @@ Elementos globales
     margin: 0;
     padding: 0;
     border: 0;
-    width: 100vw;
+    width: 100%;
     font-size: 100%;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -14,40 +14,27 @@ Etiqueta body
 */
 body{
     min-height: 100vh;
-    background-color: #232323;
-    color: #cdcdcd;
     flex-direction: column;
 }
-header, nav, main, aside, footer{
-    display: block;
-    width: 100%;
-}
 
-header {
-    background-color: #232323;
-    height: 18vh;
+#encabezado{
+    height: 10vh;  
 }
-header #logo{
-    height: 120px;
-    scale: 0.3;
-    object-fit: cover;
+#encabezado #logo{
+    display: inline-block;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    width: 100px;
+    height: 100px;
+    left: 0;
+    top: 0;
 }
-header h1{
-    clear: both;
-    text-transform: uppercase;
-    text-align: center;
+#encabezado #nombreSitio{
+    display: inline-block;
     font-size: xx-large;
-    color: #009d71;
-}
-
-
-nav a {
-    clear: both;
-    display: block;
-    text-align: center;
-    height: 5vh;
-    font-size: 0.9em;
-    background-color: #cdcdcd;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a, a:link, a:visited {
@@ -55,6 +42,43 @@ a, a:link, a:visited {
     text-decoration: underline;
     cursor: auto;
 }
+
+.topnav {
+    overflow: hidden;
+    background-color: #232323;
+    position: relative;
+  }
+  
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  .topnav a {
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+  .topnav a.icon {
+    background: #232323;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .topnav a:hover {
+    background-color: #cdcdcd;
+    color: #232323;
+  }
+  
+  .active {
+    background-color: #04AA6D;
+    color: #cdcdcd;
+  }
+
+
 /*El siguiente codigo funciona para la pagina acerca de, los botones se llaman acordeon y las secciones se llaman panel*/
 .acordeon {
     background-color: #009d71;
@@ -86,10 +110,11 @@ a, a:link, a:visited {
 
 
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #232323;
+    color: #cdcdcd;
     text-align: center;
     position: fixed;
     bottom: 0;
     padding: 10px 0;
-  }
+}
+
