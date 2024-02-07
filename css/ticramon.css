@@ -21,6 +21,7 @@ body{
     height: 100px;
     color: #009d71;
     background-color: #232323;  
+    align-items: center; 
 }
 #encabezado #logo{
     display: inline-block;
@@ -39,8 +40,8 @@ body{
     font-size: xx-large;
     text-transform: uppercase;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 30px 0;
   text-align: center;
+  vertical-align: middle;
 }
 
 a, a:link, a:visited {
@@ -107,13 +108,17 @@ a, a:link, a:visited {
   
   .panel {
     padding: 0 18px;
+    width: 100%;
     display: none;
     color: #009d71;
     background-color: #cdcdcd;
     overflow: hidden;
   }
 
-
+  .panel p{
+    word-wrap: break-word;
+  }
+  
 
 footer {
     background-color: #232323;
