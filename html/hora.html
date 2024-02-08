@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Background Color</title>
+    <style>
+        :root {
+            --day-color: #f0f0f0; /* Default color for daytime */
+            --night-color: #333; /* Default color for nighttime */
+        }
+
+        body {
+            background-color: var(--day-color); /* Initial background color */
+            transition: background-color 0.5s ease; /* Smooth transition */
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello, world!</h1>
+    <script>
+        // Get current hour and minutes
+        const currentHour = new Date().getHours();
+        const currentMinutes = new Date().getMinutes();
+
+        // Check if it's nighttime
+        const isNightTime = (currentHour === 10 && currentMinutes >= 10) || (currentHour === 18 && currentMinutes >= 30);
+
+        // Set body background color based on whether it's daytime or nighttime
+        if (isNightTime) {
+            document.documentElement.style.setProperty('--day-color', '#333');
+        } else {
+            document.documentElement.style.setProperty('--day-color', '#f0f0f0');
+        }
+    </script>
+</body>
+</html>
