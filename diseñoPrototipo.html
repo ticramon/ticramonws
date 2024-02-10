@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile CSS with Hamburger Menu</title>
+<style>
+    html {
+        
+    }
+    *{
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: #cdcdcd;
+        background-color: #232323;
+        padding: 0;
+        border: 0;
+        margin: 0;
+        font-size: 16px;
+
+    }
+    header#encabezadoPagina, main, aside.lateral, footer#piePagina{
+        width: 100%;
+        display: block;
+    }
+    header#encabezadoPagina figure, aside.lateral{
+        background-color: #cdcdcd;
+        color: #232323;
+    }
+    header#encabezadoPagina {
+        height: 50px;
+    }
+
+    header#encabezadoPagina figure, header#encabezadoPagina div {
+        height: 50px;
+        display: inline-block;
+    }
+    header#encabezadoPagina figure{
+        width: 100%;
+        position: fixed;
+        left: 0;
+        z-index: 998;
+        text-align: center;
+    }
+    #encabezadoPagina figure #logotipo{
+        height: 50px;
+        width: 50px;
+        display: inline-block;
+    }
+
+    #logotipo[alt]{
+        background-color: #cdcdcd;
+        color: #009d71;
+        text-shadow: 2px 2px 4px #232323;
+    }
+    header#encabezadoPagina div{
+        width: 50px;
+        position: fixed;
+        right: 0;
+        text-align: center;
+        font-size:36px;
+        z-index: 999;    
+    }
+
+    nav {
+        position: absolute;
+        top: 50px;
+        width: 100%;
+        display: none;
+    }
+
+    header#encabezadoPagina ul.menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header#encabezadoPagina ul.menu li {
+        margin: 10px 0;
+        display: block;
+    }
+
+
+
+    main {
+        background-color: #232323;
+        min-height: 60vh;
+    }
+    aside.lateral {
+        min-height: 60vh;
+    }
+    footer#piePagina {
+        background-color: #009d71;
+        bottom: 0px;
+        height: 20vh;
+        position: fixed;
+    }
+
+
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none; /* Initially hide the hamburger menu */
+}
+
+.menu.show-menu {
+    display: block; /* Show the navigation menu when the hamburger menu is clicked */
+}
+
+.accordion {
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .active h1, .accordion:hover, .accordion:hover h1 {
+  background-color: #009d71; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+}
+
+
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+  border: 2px solid #232323; /* Add border property */
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook, .fa-youtube, .fa-instagram , .fa-rss {
+  background: #009d71;
+  color: #cdcdcd;
+}
+
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<header id="encabezadoPagina">
+    <figure>
+        <!-- Your logo goes here -->
+        <img id="logotipo" src="img/ticramon-mobile.png" alt="Ticramon">
+    </figure>
+    <!-- Hamburger menu icon -->
+    <div class="hamburger">&#9776;</div>
+    <nav class="menu">
+        <!-- Navigation menu items -->
+        <ul class="menu">
+            <li>Inicio</li>
+            <li>Acerca de</li>
+            <li>Servicios</li>
+            <li>Cursos</li>
+            <li>Galeria</li>
+            <li>Tienda</li>
+            <li>Testimonios</li>
+            <li>Contacto</li>
+        </ul>
+    </nav>
+</header>
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('nav.menu');
+
+    hamburger.addEventListener('click', function() {
+        navMenu.classList.toggle('show-menu');
+    });
+</script>
+
+<main>
+    <section>
+        <article></article>
+    </section>
+    <aside class="interno">
+    </aside>
+    <article>
+        <section>
+            <header class="accordion">
+                <h1>Que es Ticramon</h1>
+            </header>
+            <article class="panel">
+                Ticramon es un proyecto de emprendimiento en el cual se encarga 
+                de dar soporte tecnico a equipos informaticos de manera presencial y remota.
+            </article>
+        </section>
+        <section>
+            <header class="accordion">
+                <h1>Historia</h1>
+            </header>
+            <article class="panel">
+                El proyecto se estaba gestionando desde el año 2014, como ramsols.<br/>
+                    El nombre viene de TIC(Tecnologias de la informacion y comunicacion)
+                    RAMON del nombre del fundador, Ramón Méndez.<br/>
+                    Ademas, es un juego de palabras, ram por carnero en ingles, ademas de un 
+                    componente que usan las computadoras, la memoria Ram.<br/>
+                    Y on, debido al sistema de encendido y apagado.
+            </article>
+        </section>
+        <section>
+            <header class="accordion">
+                <h1>Mision</h1>
+            </header>
+            <article class="panel">
+                Ser un servicio que ofrezca soluciones de computacion a largo plazo, 
+                    asi mismo llegar a ser formadores en el area de informatica y computacion 
+                    en el norte del estado de Guanajuato en zonas rurales.<br/>
+                    Crear aplicaciones y sitios web que beneficioen economicamente 
+                    y socialmente a la region norte de Guanajuato.
+            </article>
+        </section>
+        <section>
+            <header class="accordion">
+                <h1>Vision</h1>
+            </header>
+            <article class="panel">
+                <ul>
+                    <li>Ser una empresa de soporte tecnico, ciberseguridad, redes 
+                        y desarrollo de software.</li>
+                    <li>Ser fuente de empleo directa para 10 personas.</li>
+                    <li>Crear y formar tecnicos informaticos.</li>
+                    <li>Ofrecer servicios de soporte de TI en toda la republica Mexicana, 
+                        asi, como tener socios en el continente americano y Europa.</li>
+                    <li>Lanzar una aplicacion de gestion de torneos deportivos.</li>
+                    <li>Ser reconocidos por la calidad de servicio.</li>
+                    <li>Ser instructores de capacitacion en Linux a nivel usuario.</li>
+                    <li>Ser formadores y dar soluciones preventivas y correctivas 
+                        en el area de ciberseguridad.</li>
+                    <li>Llegar a tener un departamento de reparacion de dispositivos 
+                        moviles y de Internet de las cosas.</li> 
+                </ul>
+            </article>
+        </section>
+        <section>
+            <header class="accordion">
+                <h1>Valores</h1>
+            </header>
+            <article class="panel">
+                Honestidad, Responsabilidad, Respeto, Calidad
+            </article>
+        </section>
+    </article>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+              panel.style.display = "none";
+            } else {
+              panel.style.display = "block";
+            }
+          });
+        }
+        </script>
+</main>
+
+<aside class="lateral">
+    Contenido relacionado<br/>
+
+    <!-- Add font awesome icons -->
+<a href="#" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-youtube"></a>
+<a href="#" class="fa fa-instagram"></a>
+<a href="#" class="fa fa-rss"></a>
+</aside>
+
+<footer id="piePagina">
+    2024
+</footer>
+
+</body>
+</html>
