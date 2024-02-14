@@ -4,19 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mobile CSS with Hamburger Menu</title>
+<link rel="icon" type="image/x-icon" href="img/ticramon-mobile-ico.png">
 <style>
-    html {
-        
-    }
     *{
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
         color: #cdcdcd;
         background-color: #232323;
         padding: 0;
         border: 0;
         margin: 0;
         font-size: 16px;
-
+        scrollbar-width: none;
+    }
+    body{
+        
     }
     header#encabezadoPagina, main, aside.lateral, footer#piePagina{
         width: 100%;
@@ -30,9 +31,27 @@
         height: 50px;
     }
 
+    .btn {
+        border: none;
+        background-color: inherit;
+        padding: 14px 28px;
+        font-size: 16px;
+        height: 50px;
+        cursor: pointer;
+        display: inline-block;
+        position: fixed;
+        z-index: 999;  
+    }
+
+    .btn:hover {background: #cdcdcd;}
+    
+    .success {color: #009d71;}
+    
+
     header#encabezadoPagina figure, header#encabezadoPagina div {
         height: 50px;
         display: inline-block;
+        user-select: none;
     }
     header#encabezadoPagina figure{
         width: 100%;
@@ -43,7 +62,7 @@
     }
     #encabezadoPagina figure #logotipo{
         height: 50px;
-        width: 50px;
+        width: 125px;
         display: inline-block;
     }
 
@@ -75,11 +94,15 @@
     }
 
     header#encabezadoPagina ul.menu li {
-        margin: 10px 0;
+        padding: 10px 0;
+        width: 100%;
         display: block;
+        text-align: center;
     }
-
-
+    header#encabezadoPagina div:hover, header#encabezadoPagina ul.menu li:hover {
+        background-color: #009d71;
+        margin: #009d71;
+    }
 
     main {
         background-color: #232323;
@@ -99,11 +122,11 @@
 
 /* Hamburger menu styles */
 .hamburger {
-    display: none; /* Initially hide the hamburger menu */
+    display: none;
 }
 
 .menu.show-menu {
-    display: block; /* Show the navigation menu when the hamburger menu is clicked */
+    display: block;
 }
 
 .accordion {
@@ -114,7 +137,6 @@
   text-align: left;
   outline: none;
   font-size: 15px;
-  transition: 0.4s;
 }
 
 .active, .active h1, .accordion:hover, .accordion:hover h1 {
@@ -156,6 +178,7 @@
 <body>
 
 <header id="encabezadoPagina">
+    <button class="btn success">Iniciar Sesion</button>
     <figure>
         <!-- Your logo goes here -->
         <img id="logotipo" src="img/ticramon-mobile.png" alt="Ticramon">
@@ -291,3 +314,9 @@
 
 </body>
 </html>
+
+
+
+    
+    
+ 

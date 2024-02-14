@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    background-color: #232323;
+}
+main {overflow-x:auto;
+padding: 5%;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #cdcdcd;
+  color: #cdcdcd
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr#encabezado{background-color: #009d71}
+tr.datos:nth-child(odd){background-color: #232323}
+tr.datos:nth-child(even){background-color: #323232}
+</style>
+</head>
+<body>
+
+
+<main>
+  <table>
+    <tr id="encabezado">
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Points</th>
+    </tr>
+    <tr class="datos">
+      <td>Jill</td>
+      <td>Smith</td>
+      <td>50</td>
+    </tr>
+    <tr class="datos">
+      <td>Eve</td>
+      <td>Jackson</td>
+      <td>94</td>
+    </tr>
+    <tr class="datos">
+      <td>Adam</td>
+      <td>Johnson</td>
+      <td>67</td>
+    </tr>
+  </table>
+</main>
+
+</body>
+</html>
