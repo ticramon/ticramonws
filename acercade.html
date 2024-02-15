@@ -5,174 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mobile CSS with Hamburger Menu</title>
 <link rel="icon" type="image/x-icon" href="img/ticramon-mobile-ico.png">
-<style>
-    *{
-        font-family: Arial, Helvetica, sans-serif;
-        color: #cdcdcd;
-        background-color: #232323;
-        padding: 0;
-        border: 0;
-        margin: 0;
-        font-size: 16px;
-        scrollbar-width: none;
-    }
-    body{
-        
-    }
-    header#encabezadoPagina, main, aside.lateral, footer#piePagina{
-        width: 100%;
-        display: block;
-    }
-    header#encabezadoPagina figure, aside.lateral{
-        background-color: #cdcdcd;
-        color: #232323;
-    }
-    header#encabezadoPagina {
-        height: 50px;
-    }
-
-    .btn {
-        border: none;
-        background-color: inherit;
-        padding: 14px 28px;
-        font-size: 16px;
-        height: 50px;
-        cursor: pointer;
-        display: inline-block;
-        position: fixed;
-        z-index: 999;  
-    }
-
-    .btn:hover {background: #cdcdcd;}
-    
-    .success {color: #009d71;}
-    
-
-    header#encabezadoPagina figure, header#encabezadoPagina div {
-        height: 50px;
-        display: inline-block;
-        user-select: none;
-    }
-    header#encabezadoPagina figure{
-        width: 100%;
-        position: fixed;
-        left: 0;
-        z-index: 998;
-        text-align: center;
-    }
-    #encabezadoPagina figure #logotipo{
-        height: 50px;
-        width: 125px;
-        display: inline-block;
-    }
-
-    #logotipo[alt]{
-        background-color: #cdcdcd;
-        color: #009d71;
-        text-shadow: 2px 2px 4px #232323;
-    }
-    header#encabezadoPagina div{
-        width: 50px;
-        position: fixed;
-        right: 0;
-        text-align: center;
-        font-size:36px;
-        z-index: 999;    
-    }
-
-    nav {
-        position: absolute;
-        top: 50px;
-        width: 100%;
-        display: none;
-    }
-
-    header#encabezadoPagina ul.menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    header#encabezadoPagina ul.menu li {
-        padding: 10px 0;
-        width: 100%;
-        display: block;
-        text-align: center;
-    }
-    header#encabezadoPagina div:hover, header#encabezadoPagina ul.menu li:hover {
-        background-color: #009d71;
-        margin: #009d71;
-    }
-
-    main {
-        background-color: #232323;
-        min-height: 60vh;
-    }
-    aside.lateral {
-        min-height: 60vh;
-    }
-    footer#piePagina {
-        background-color: #009d71;
-        bottom: 0px;
-        height: 20vh;
-        position: fixed;
-    }
-
-
-
-/* Hamburger menu styles */
-.hamburger {
-    display: none;
-}
-
-.menu.show-menu {
-    display: block;
-}
-
-.accordion {
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.active, .active h1, .accordion:hover, .accordion:hover h1 {
-  background-color: #009d71; 
-}
-
-.panel {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-}
-
-
-
-.fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 30px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-  border-radius: 50%;
-  border: 2px solid #232323; /* Add border property */
-}
-
-.fa:hover {
-    opacity: 0.7;
-}
-
-.fa-facebook, .fa-youtube, .fa-instagram , .fa-rss {
-  background: #009d71;
-  color: #cdcdcd;
-}
-
-
-</style>
+<link rel="stylesheet" href="css/ticramon.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -188,14 +21,14 @@
     <nav class="menu">
         <!-- Navigation menu items -->
         <ul class="menu">
-            <li>Inicio</li>
-            <li>Acerca de</li>
-            <li>Servicios</li>
-            <li>Cursos</li>
-            <li>Galeria</li>
-            <li>Tienda</li>
-            <li>Testimonios</li>
-            <li>Contacto</li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="acercade.html">Acerca de</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="tienda.html">Tienda</a></li>
+            <li><a href="testimonios.html">Testimonios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
 </header>
