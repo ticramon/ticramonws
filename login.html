@@ -7,11 +7,34 @@
 <link rel="icon" type="image/x-icon" href="img/ticramon-mobile-ico.png">
 <link rel="stylesheet" href="css/ticramon.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  .login {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    text-align: center;
+  }
+  
+  .login-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+  }
+</style>
 </head>
 <body>
 
 <header id="encabezadoPagina">
-    <button class="btn success">Iniciar Sesion</button>
+    <button id="iniciarSesion" onclick="showLoginForm()" class="btn success">Iniciar Sesion</button>
     <figure>
         <!-- Your logo goes here -->
         <img id="logotipo" src="img/ticramon-mobile.png" alt="Ticramon">
@@ -21,8 +44,8 @@
     <nav class="menu">
         <!-- Navigation menu items -->
         <ul class="menu">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="acercade.html">Acerca de</a></li>
+            <a href="index.html"><li>Inicio</li></a>
+            <a href="acercade.html"><li>Acerca de</a></li>
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="cursos.html">Cursos</a></li>
             <li><a href="galeria.html">Galeria</a></li>
@@ -31,6 +54,36 @@
             <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
+
+    <section class="login" id="loginSection">
+        <div class="login-content">
+            <header>
+                <span class="close" title="Close Form" onclick="closeLoginForm()">&times;</span>
+                <figure class="logo">
+                    <!-- Your logo here -->
+                    <img src="../../img/ticramon-alt.png" alt="Ticramon">
+                </figure>
+            </header>
+            <section class="form-container">
+                <form id="login-form">
+                    <input type="text" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <form id="signup-form" style="display: none;">
+                    <input type="text" placeholder="First Name" required>
+                    <input type="text" placeholder="Last Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </section>
+            <footer class="login-link" id="login-link">
+                <p>Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a></p>
+            </footer>
+        </div>
+    </section>
+
 </header>
 <script>
     const hamburger = document.querySelector('.hamburger');
@@ -39,481 +92,19 @@
     hamburger.addEventListener('click', function() {
         navMenu.classList.toggle('show-menu');
     });
+
+    function showLoginForm() {
+        document.getElementById('loginSection').style.display = 'block';
+    }
+
+    function closeLoginForm() {
+        document.getElementById('loginSection').style.display = 'none';
+    }
 </script>
-
-<main>
-    <section>
-        <article></article>
-    </section>
-    <aside class="interno">
-    </aside>
-    <article>
-        <section>
-            <header class="accordion">
-                <h1>Que es Ticramon</h1>
-            </header>
-            <article class="panel">
-                Ticramon es un proyecto de emprendimiento en el cual se encarga 
-                de dar soporte tecnico a equipos informaticos de manera presencial y remota.
-            </article>
-        </section>
-        <section>
-            <header class="accordion">
-                <h1>Historia</h1>
-            </header>
-            <article class="panel">
-                El proyecto se estaba gestionando desde el año 2014, como ramsols.<br/>
-                    El nombre viene de TIC(Tecnologias de la informacion y comunicacion)
-                    RAMON del nombre del fundador, Ramón Méndez.<br/>
-                    Ademas, es un juego de palabras, ram por carnero en ingles, ademas de un 
-                    componente que usan las computadoras, la memoria Ram.<br/>
-                    Y on, debido al sistema de encendido y apagado.
-            </article>
-        </section>
-        <section>
-            <header class="accordion">
-                <h1>Mision</h1>
-            </header>
-            <article class="panel">
-                Ser un servicio que ofrezca soluciones de computacion a largo plazo, 
-                    asi mismo llegar a ser formadores en el area de informatica y computacion 
-                    en el norte del estado de Guanajuato en zonas rurales.<br/>
-                    Crear aplicaciones y sitios web que beneficioen economicamente 
-                    y socialmente a la region norte de Guanajuato.
-            </article>
-        </section>
-        <section>
-            <header class="accordion">
-                <h1>Vision</h1>
-            </header>
-            <article class="panel">
-                <ul>
-                    <li>Ser una empresa de soporte tecnico, ciberseguridad, redes 
-                        y desarrollo de software.</li>
-                    <li>Ser fuente de empleo directa para 10 personas.</li>
-                    <li>Crear y formar tecnicos informaticos.</li>
-                    <li>Ofrecer servicios de soporte de TI en toda la republica Mexicana, 
-                        asi, como tener socios en el continente americano y Europa.</li>
-                    <li>Lanzar una aplicacion de gestion de torneos deportivos.</li>
-                    <li>Ser reconocidos por la calidad de servicio.</li>
-                    <li>Ser instructores de capacitacion en Linux a nivel usuario.</li>
-                    <li>Ser formadores y dar soluciones preventivas y correctivas 
-                        en el area de ciberseguridad.</li>
-                    <li>Llegar a tener un departamento de reparacion de dispositivos 
-                        moviles y de Internet de las cosas.</li> 
-                </ul>
-            </article>
-        </section>
-        <section>
-            <header class="accordion">
-                <h1>Valores</h1>
-            </header>
-            <article class="panel">
-                Honestidad, Responsabilidad, Respeto, Calidad
-            </article>
-        </section>
-    </article>
-    <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
-        
-        for (i = 0; i < acc.length; i++) {
-          acc[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-              panel.style.display = "none";
-            } else {
-              panel.style.display = "block";
-            }
-          });
-        }
-        </script>
-</main>
-
-<aside class="lateral">
-    Contenido relacionado<br/>
-
-    <!-- Add font awesome icons -->
-<a href="#" class="fa fa-facebook"></a>
-<a href="#" class="fa fa-youtube"></a>
-<a href="#" class="fa fa-instagram"></a>
-<a href="#" class="fa fa-rss"></a>
-</aside>
 
 <footer id="piePagina">
     2024
 </footer>
 
-</body>
-</html>
-
-
-
-    
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color: #04AA6D;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-/* Center the image and position the close button */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
-.container {
-  padding: 16px;
-}
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
-
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
-}
-  
-@keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-}
-</style>
-</head>
-<body>
-
-<h2>Modal Login Form</h2>
-
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-
-<div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="/action_page.php" method="post">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="img_avatar2.png" alt="Avatar" class="avatar">
-    </div>
-
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
-</body>
-</html>
-    
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login / Sign Up</title>
-<style>
-* {
-    font-family: Arial, sans-serif;
-    background-color: #232323;
-    color: #cdcdcd;
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-
-#iniciarSesion {
-  width: 20%; /* Adjust button width to account for padding */
-  padding: 15px;
-  background-color: #009d71;
-  border: none;
-  border-radius: 4px;
-  border-radius: 3px;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  left: 15px; /* Align button with input fields */
-}
-
-.container {
-  width: 80%;
-  margin: 20% auto;
-  padding: 4%;
-  border-radius: 2%;
-  box-shadow: 0px 4px 10px rgba(0, 154, 107, 0.69);
-}
-
-.logo {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.logo img {
-  max-width: 100px;
-  margin: 0;
-  padding: 0;
-}
-
-.form-container {
-  margin-top: 4%;
-  display: flex;
-  flex-direction: column;
-  height: 300px; /* Set a fixed height for both forms */
-  position: relative; /* Position the buttons relative to the form container */
-}
-
-.form-container form {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  position: relative; /* Position the buttons relative to the form */
-}
-
-.form-container input[type="text"],
-.form-container input[type="password"],
-.form-container input[type="email"] {
-  width: 100%;
-  padding: 15px;
-  margin-bottom: 3%;
-  border: 1px solid #009d71;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.form-container button {
-  width: calc(100% - 30px); /* Adjust button width to account for padding */
-  padding: 15px;
-  background-color: #009d71;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  position: absolute;
-  bottom: 0;
-  left: 15px; /* Align button with input fields */
-}
-
-.form-container button:hover {
-  background-color: #009d71;
-}
-
-.login-link {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.login-link a {
-  color: #009d71;
-  text-decoration: none;
-}
-
-.login-link a:hover {
-  text-decoration: underline;
-}
-
-/* Hide the main content by default */
-main {
-  display: none;
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #cdcdcd;
-  font-size: 50px;
-  cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
-</style>
-</head>
-<body>
-  <button id="iniciarSesion" onclick="showMainContent()">Iniciar sesión</button>
-  <main class="container">
-    <header>
-      <span class="close" title="Close Form" onclick="closeForm()">&times;</span>
-      <figure class="logo">
-        <!-- Your logo here -->
-        <img src="../../img/ticramon-alt.png" alt="Ticramon">
-      </figure>
-    </header>
-    <section class="form-container">
-      <form id="login-form">
-        <input type="text" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
-        <button type="submit">Login</button>
-      </form>
-      <form id="signup-form" style="display: none;">
-        <input type="text" placeholder="First Name" required>
-        <input type="text" placeholder="Last Name" required>
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
-        <button type="submit">Sign Up</button>
-      </form>
-    </section>
-    <footer class="login-link" id="login-link">
-      <p>Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a></p>
-    </footer>
-  </main>
-
-  <script>
-    function toggleForm() {
-      var loginForm = document.getElementById('login-form');
-      var signupForm = document.getElementById('signup-form');
-      var loginLink = document.getElementById('login-link');
-      if (loginForm.style.display === 'none') {
-        loginForm.style.display = 'flex';
-        signupForm.style.display = 'none';
-        loginLink.innerHTML = '<p>Don\'t have an account? <a href="#" onclick="toggleForm()">Sign Up</a></p>';
-      } else {
-        loginForm.style.display = 'none';
-        signupForm.style.display = 'flex';
-        loginLink.innerHTML = '<p>Already have an account? <a href="#" onclick="toggleForm()">Login</a></p>';
-      }
-    }
-
-    function showMainContent() {
-      var mainContent = document.querySelector('main');
-      mainContent.style.display = 'block';
-    }
-
-    function closeForm() {
-      var mainContent = document.querySelector('main');
-      mainContent.style.display = 'none';
-    }
-
-    // Close the main content if clicked outside of it
-    window.onclick = function(event) {
-      var mainContent = document.querySelector('main');
-      if (event.target === mainContent) {
-        mainContent.style.display = 'none';
-      }
-    };
-  </script>
 </body>
 </html>
