@@ -1,4 +1,3 @@
-
 *{
     font-family: Arial, Helvetica, sans-serif;
     color: #cdcdcd;
@@ -9,8 +8,9 @@
     font-size: 16px;
     scrollbar-width: none;
 }
-body{
-    
+
+a{
+  text-decoration: none;
 }
 header#encabezadoPagina, main, aside.lateral, footer#piePagina{
     width: 100%;
@@ -40,12 +40,12 @@ header#encabezadoPagina {
 
 .success {color: #009d71;}
 
-
 header#encabezadoPagina figure, header#encabezadoPagina div {
     height: 50px;
     display: inline-block;
     user-select: none;
 }
+
 header#encabezadoPagina figure{
     width: 100%;
     position: fixed;
@@ -53,6 +53,7 @@ header#encabezadoPagina figure{
     z-index: 998;
     text-align: center;
 }
+
 #encabezadoPagina figure #logotipo{
     height: 50px;
     width: 125px;
@@ -64,6 +65,7 @@ header#encabezadoPagina figure{
     color: #009d71;
     text-shadow: 2px 2px 4px #232323;
 }
+
 header#encabezadoPagina div{
     width: 50px;
     position: fixed;
@@ -84,6 +86,9 @@ header#encabezadoPagina ul.menu {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    position: fixed;
+
 }
 
 header#encabezadoPagina ul.menu li {
@@ -92,30 +97,120 @@ header#encabezadoPagina ul.menu li {
     display: block;
     text-align: center;
 }
-header#encabezadoPagina div:hover, header#encabezadoPagina ul.menu li:hover{
+
+header#encabezadoPagina div:hover, header#encabezadoPagina ul.menu li:hover,  header#encabezadoPagina ul.menu li:hover a{
     background-color: #009d71;
     margin: #009d71;
 }
 
-
-
-
-
-main {
-    background-color: #232323;
-    min-height: 60vh;
+main.container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 92%;
+    height: 100vh;
+    margin: auto;
+    padding: 4%;
+    border-radius: 2%;
+    box-shadow: 0px 4px 10px rgba(0, 154, 107, 1);
+    background-color: rgba(35, 35, 35, 0.9); /* Semi-transparent background */
+    z-index: 999; /* Ensure it's above other elements */
+    overflow: auto; /* Enable scrolling if necessary */
 }
+
+/*logotipo en el formulario*/ 
+.container header .logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container header .logo img {
+  max-width: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+.container .form-container {
+  margin-top: 4%;
+  display: flex;
+  flex-direction: column;
+  height: 300px; /* Set a fixed height for both forms */
+  position: relative; /* Position the buttons relative to the form container */
+}
+
+.container .form-container form {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Position the buttons relative to the form */
+}
+
+.container .form-container input[type="text"],
+.container .form-container input[type="password"],
+.container .form-container input[type="email"] {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 3%;
+  border: 1px solid #009d71;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.container .form-container button {
+  width: calc(100% - 30px); /* Adjust button width to account for padding */
+  padding: 15px;
+  background-color: #009d71;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: 15px; /* Align button with input fields */
+}
+
+.container .form-container button:hover {
+  background-color: #009d71;
+}
+
+.container .login-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.container .login-link a {
+  color: #009d71;
+  text-decoration: none;
+}
+
+.container .login-link a:hover {
+  text-decoration: underline;
+}
+
+.container .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #cdcdcd;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.container .close:hover,
+.container .close:focus {
+  color: red;
+  cursor: pointer;
+}
+
 aside.lateral {
     min-height: 60vh;
 }
 footer#piePagina {
     background-color: #009d71;
     bottom: 0px;
-    height: 20vh;
+    height: 25vh;
     position: fixed;
 }
-
-
 
 /* Hamburger menu styles */
 .hamburger {
@@ -146,25 +241,54 @@ display: none;
 overflow: hidden;
 }
 
+#servicios table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #cdcdcd;
+  color: #cdcdcd
+}
 
+#servicios th, #servicios td {
+  text-align: left;
+  padding: 8px;
+}
+
+#servicios tr#encabezado{
+  background-color: #009d71;
+}
+
+#servicios tr.datos:nth-child(odd){background-color: #009d71}
+#servicios tr.datos:nth-child(even){background-color: #00719d}
+
+#formularioContacto{
+  min-height: 60vh;
+}
+#formularioContacto input, #formularioContacto button{
+  color: #cdcdcd;
+  background-color: #009d71;
+  display: block;
+  width: 94%;
+  margin: 10px 3%;
+  height: 35px;
+  border-radius: 4px;
+}
 
 .fa {
-padding: 20px;
-font-size: 30px;
-width: 30px;
+padding: 6px;
+font-size: 16px;
+width: 16px;
 text-align: center;
 text-decoration: none;
 margin: 5px 2px;
-border-radius: 50%;
-border: 2px solid #232323; /* Add border property */
+border: none; /* Add border property */
 }
 
 .fa:hover {
 opacity: 0.7;
 }
 
-.fa-facebook, .fa-youtube, .fa-instagram , .fa-rss {
+.fa-envelope, .fa-whatsapp, .fa-facebook, .fa-youtube-play, .fa-instagram, .fa-rss {
 background: #009d71;
 color: #cdcdcd;
 }
-

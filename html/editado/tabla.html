@@ -1,108 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mobile CSS with Hamburger Menu</title>
-<link rel="icon" type="image/x-icon" href="img/ticramon-mobile-ico.png">
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+<style>
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    background-color: #232323;
+}
+main {
+padding: 5%;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #cdcdcd;
+  color: #cdcdcd
+}
 
-<link rel="stylesheet" href="css/ticramon.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr#encabezado{
+  background-color: #009d71;
+  position: sticky;
+}
+tr.datos:nth-child(odd){background-color: #232323}
+tr.datos:nth-child(even){background-color: #323232}
+</style>
 </head>
 <body>
 
-<header id="encabezadoPagina">
-    <button id="iniciarSesion" class="btn success" onclick="showMainContent()">Login</button>
-    <figure>
-        <!-- Your logo goes here -->
-        <img id="logotipo" src="img/ticramon-mobile.png" alt="Ticramon">
-    </figure>
-    <!-- Hamburger menu icon -->
-    <div class="hamburger">&#9776;</div>
-    <nav class="menu">
-        <!-- Navigation menu items -->
-        <ul class="menu">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="acercade.html">Acerca de</a></li>
-          <li><a href="servicios.html">Servicios</a></li>
-          <li><a href="cursos.html">Cursos</a></li>
-          <li><a href="galeria.html">Galeria</a></li>
-          <li><a href="tienda.html">Tienda</a></li>
-          <li><a href="testimonios.html">Testimonios</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-    </nav>
-</header>
-<script>
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('nav.menu');
-
-    hamburger.addEventListener('click', function() {
-        navMenu.classList.toggle('show-menu');
-    });
-</script>
-<main class="container">
-    <header>
-      <span class="close" title="Close Form" onclick="closeForm()">&times;</span>
-      <figure class="logo">
-        <!-- Your logo here -->
-        <img src="img/ticramon-mobile.png" alt="Ticramon">
-      </figure>
-    </header>
-    <section class="form-container">
-      <form id="login-form">
-        <input type="text" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
-        <button type="submit">Login</button>
-      </form>
-      <form id="signup-form" style="display: none;">
-        <input type="text" placeholder="First Name" required>
-        <input type="text" placeholder="Last Name" required>
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
-        <button type="submit">Sign Up</button>
-      </form>
-    </section>
-    <footer class="login-link" id="login-link">
-      <p>Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a></p>
-    </footer>
-  </main>
-  <script>
-    function toggleForm() {
-      var loginForm = document.getElementById('login-form');
-      var signupForm = document.getElementById('signup-form');
-      var loginLink = document.getElementById('login-link');
-      if (loginForm.style.display === 'none') {
-        loginForm.style.display = 'flex';
-        signupForm.style.display = 'none';
-        loginLink.innerHTML = '<p>Don\'t have an account? <a href="#" onclick="toggleForm()">Sign Up</a></p>';
-      } else {
-        loginForm.style.display = 'none';
-        signupForm.style.display = 'flex';
-        loginLink.innerHTML = '<p>Already have an account? <a href="#" onclick="toggleForm()">Login</a></p>';
-      }
-    }
-
-    function showMainContent() {
-      var mainContent = document.querySelector('main');
-      mainContent.style.display = 'block';
-    }
-
-    function closeForm() {
-      var mainContent = document.querySelector('main');
-      mainContent.style.display = 'none';
-    }
-
-    // Close the main content if clicked outside of it
-    window.onclick = function(event) {
-      var mainContent = document.querySelector('main');
-      if (event.target === mainContent) {
-        mainContent.style.display = 'none';
-      }
-    };
-  </script>
-
-<main id="servicios" style="overflow-x:auto;">
+<main style="overflow-x:auto;">
   <table>
     <tr id="encabezado">
       <th>
@@ -296,28 +232,5 @@
     </tr>
   </table>
 </main>
-
-<aside class="lateral">
-  Contenido relacionado<br/>
-</aside>
-
-<footer id="piePagina">
-  2024
-  <br/>
-  <!-- Add font awesome icons -->
-<a href="#" class="fa fa-envelope"></a>
-<a href="#" class="fa fa-whatsapp"></a>
-<a href="#" class="fa fa-facebook"></a>
-<a href="#" class="fa fa-youtube-play"></a>
-<a href="#" class="fa fa-instagram"></a>
-<a href="#" class="fa fa-rss"></a>
-</footer>
-
 </body>
 </html>
-
-
-
-    
-    
- 

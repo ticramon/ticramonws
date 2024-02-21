@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF Viewer</title>
+</head>
+<body>
+
+<div>
+  <button onclick="changeLanguage('en')">English</button>
+  <button onclick="changeLanguage('es')">Spanish</button>
+  <button onclick="changeLanguage('it')">Italian</button>
+</div>
+
+<div>
+  <object id="pdfViewer" type="application/pdf" width="100%" height="600">
+    <iframe src="../../pdf/cv/Ramon-Mendez-en.pdf" width="100%" height="600" style="border: none;">This browser does not support PDFs. Please download the PDF to view it: <a href="fallback.pdf">Download PDF</a></iframe>
+  </object>
+</div>
+
+<script>
+  function changeLanguage(language) {
+    var pdfViewer = document.getElementById('pdfViewer');
+    if (language === 'en') {
+      pdfViewer.data = '../../pdf/cv/Ramon-Mendez-en.pdf';
+    } else if (language === 'es') {
+      pdfViewer.data = '../../pdf/cv/Ramon-Mendez-es.pdf';
+    } else if (language === 'it') {
+      pdfViewer.data = '../../pdf/cv/Ramon-Mendez-it.pdf';
+    }
+  }
+</script>
+
+</body>
+</html>
