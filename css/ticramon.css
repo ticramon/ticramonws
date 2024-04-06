@@ -1,3 +1,6 @@
+/*Aplica a todos los elementos sin excepcion, 
+a menos que un elemento posterior sobreescriba el valor 
+de los atributos*/
 *{
     font-family: Arial, Helvetica, sans-serif;
     color: #cdcdcd;
@@ -291,4 +294,32 @@ opacity: 0.7;
 .fa-envelope, .fa-whatsapp, .fa-facebook, .fa-youtube-play, .fa-instagram, .fa-rss {
 background: #009d71;
 color: #cdcdcd;
+}
+
+
+#servicios{
+  overflow-x:auto;
+}
+#servicios table{
+  margin:auto;
+  width: 90%;
+  border-color: #009d71;
+}
+#servicios table #encabezado th{
+  background-color: #cdcdcd;
+  color: #232323;
+  font-weight: bold;
+}
+#servicios table .datos:nth-child(even) td{
+  color: #cdcdcd;
+  background-color: #323232;
+}
+#servicios table .datos:nth-child(odd) td{
+  color: #dcdcdc;
+  background-color: #232323;
+}
+#servicios table .datos:hover td{
+  color: #232323;
+  border-color: #cdcdcd;
+  background-color: #009d71;
 }
